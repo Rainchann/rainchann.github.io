@@ -10,8 +10,8 @@
 <body>
     <div class="home">
         
-        <div class="banner" id="tdy-num">上期攪珠號碼：3， 15， 23， 24， 33，42 &emsp;&emsp; 攪珠日期：4/6/2023</div>
-        <div class="topic">Welcome to 陸合彩智能系統</div>
+        <div class="banner" id="tdy-num">上期攪珠號碼： &emsp;&emsp; 攪珠日期：</div>
+        <div class="topic">Welcome to 六合彩智能系統</div>
         <div class="box">
             <div class="ball"><img src="ball.png" alt=""/><div id="num1"></div></div>
             <div class="ball"><img src="ball.png" alt=""/><div id="num2"></div></div>
@@ -28,7 +28,7 @@
             <input id="confirm" type="button" value="確定選擇" alt="Please reload!"/>
         </div>
 
-        <div class="footer" id="chosen-num"></div>
+        <!-- <div class="footer" id="chosen-num"></div> -->
 
 
     </div>
@@ -56,6 +56,20 @@
         (document.childNodes[1] || document.children[0]).style = "";
     }*/
 
+    //random number
+    function generate_six_number() {
+        let six_num = [];
+        for (let i = 0; i < 6; i++) {
+            let random = Math.floor(Math.random() * 49) + 1;
+            if (!six_num.includes(random)) {
+                six_num.push(random)
+            } else {
+                i--
+            }
+        }
+        return six_num;
+    }
+
     btn2.addEventListener('click', () => {
             btn2.classList.toggle("dis-none");
             btn3.classList.toggle("dis-none");
@@ -66,11 +80,19 @@
                 num4.textContent = Math.floor(Math.random() * 49) + 1;
                 num5.textContent = Math.floor(Math.random() * 49) + 1;
                 num6.textContent = Math.floor(Math.random() * 49) + 1; 
-            },100)
+            },50)
+            
         })
     
     btn3.addEventListener('click', () => {
+        let six_num = generate_six_number();
         clearInterval(autoing);
+        num1.textContent = six_num[0];
+        num2.textContent = six_num[1];
+        num3.textContent = six_num[2];
+        num4.textContent = six_num[3];
+        num5.textContent = six_num[4];
+        num6.textContent = six_num[5];
         btn2.classList.toggle("dis-none");
         btn3.classList.toggle("dis-none");
     })
