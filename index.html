@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>六合彩</title>
+</head>
+<body>
+    <div class="home">
+        
+        <div class="banner" id="tdy-num">上期攪珠號碼：3， 15， 23， 24， 33，42 &emsp;&emsp; 攪珠日期：4/6/2023</div>
+        <div class="topic">Welcome to 陸合彩智能系統</div>
+        <div class="box">
+            <div class="ball"><img src="ball.png" alt=""/><div id="num1"></div></div>
+            <div class="ball"><img src="ball.png" alt=""/><div id="num2"></div></div>
+            <div class="ball"><img src="ball.png" alt=""/><div id="num3"></div></div>
+            <div class="ball"><img src="ball.png" alt=""/><div id="num4"></div></div>
+            <div class="ball"><img src="ball.png" alt=""/><div id="num5"></div></div>
+            <div class="ball"><img src="ball.png" alt=""/><div id="num6"></div></div>
+        </div>
+        
+        <div class="btn-opts">
+            <input id="btn1"type="button" value="手動選擇" alt="Please reload!"/>
+            <input id="btn2" type="button" value="電腦選擇" alt="Please reload!"/>
+            <input class="dis-none" id="btn3" type="button" value="停止" alt="Please reload!"/>
+            <input id="confirm" type="button" value="確定選擇" alt="Please reload!"/>
+        </div>
+
+        <div class="footer" id="chosen-num"></div>
+
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+    let btn4 = document.getElementById("confirm"); //confirm button
+    let btn1 = document.getElementById("btn2");
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+    let num3 = document.getElementById("num3");
+    let num4 = document.getElementById("num4");
+    let num5 = document.getElementById("num5");
+    let num6 = document.getElementById("num6");
+    let footer = document.getElementById("chosen-num");
+    var autoing;
+
+    /*if (document.body.clientWidth < 740) {
+        //更改基本font-size ，rem单位说明：相对于屏宽750px,1px=1rem
+        var _FONT_SIZE = (document.documentElement.clientWidth / 750);
+        (document.childNodes[1] || document.children[0]).style.fontSize = _FONT_SIZE + "px";
+    } else {
+        (document.childNodes[1] || document.children[0]).style = "";
+    }*/
+
+    btn2.addEventListener('click', () => {
+            btn2.classList.toggle("dis-none");
+            btn3.classList.toggle("dis-none");
+            autoing = setInterval(() => {
+                num1.textContent = Math.floor(Math.random() * 49) + 1;
+                num2.textContent = Math.floor(Math.random() * 49) + 1;
+                num3.textContent = Math.floor(Math.random() * 49) + 1;
+                num4.textContent = Math.floor(Math.random() * 49) + 1;
+                num5.textContent = Math.floor(Math.random() * 49) + 1;
+                num6.textContent = Math.floor(Math.random() * 49) + 1; 
+            },100)
+        })
+    
+    btn3.addEventListener('click', () => {
+        clearInterval(autoing);
+        btn2.classList.toggle("dis-none");
+        btn3.classList.toggle("dis-none");
+    })
+
+
+        /*document.querySelector(".num1").textContent = '';
+        document.querySelector(".num2").textContent = '';
+        document.querySelector(".num3").textContent = '';
+        document.querySelector(".num4").textContent = '';
+        document.querySelector(".num5").textContent = '';
+        document.querySelector(".num6").textContent = '';
+
+        setTimeout(()=> {
+            document.querySelector(".num1").textContent = Math.floor(Math.random() * 49) + 1;
+            document.querySelector(".num2").textContent = Math.floor(Math.random() * 49) + 1;
+            document.querySelector(".num3").textContent = Math.floor(Math.random() * 49) + 1;
+            document.querySelector(".num4").textContent = Math.floor(Math.random() * 49) + 1;
+            document.querySelector(".num5").textContent = Math.floor(Math.random() * 49) + 1;
+            document.querySelector(".num6").textContent = Math.floor(Math.random() * 49) + 1;
+        }, 800)*/
+</script>
+</html>

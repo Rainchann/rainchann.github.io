@@ -1,0 +1,179 @@
+* {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    font-size: 18px;
+}
+
+.home {
+    background-image: url("dt_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner {
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:30px;
+    background-color: darkred;
+    text-align: center;
+    padding-top: 6px;
+    color: white;
+}
+.topic {
+    position: absolute;
+    width:70%;
+    left:15%;
+    top:10%;
+    text-align: center;
+    font-size: 5rem;
+}
+.box {
+    position: absolute;
+    top:40%;
+    width:80%;
+    left:10%;
+    justify-content: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+}
+
+.box .ball {
+    display: inline-flex;
+    margin-left:5rem;
+    height:8rem;
+    width:8rem;
+}
+
+.box .ball #num1, .box .ball #num2, .box .ball #num3, .box .ball #num4,.box .ball #num5,.box .ball #num6 {
+    position: absolute;
+    height:8rem;
+    width:8rem;
+    text-align: center;
+    margin-top: 2.4rem;
+    color:black;
+    font-size: 2.6rem;
+}
+
+.btn-opts {
+    position: absolute;
+    height: 7rem;
+    width:40%;
+    left:30%;
+    top:60%;
+}
+
+.btn-opts input:nth-child(-n+3){
+    display: inline-block;
+    background-color:aliceblue;
+    width:20%;
+    height:3rem;
+    margin-left: 20%;
+    border-radius: 10px;
+    border-width: none;
+    color:black;
+    cursor: pointer;
+}
+
+.btn-opts #confirm{
+    display: block;
+    background-color:aliceblue;
+    position: relative;
+    left:20%;
+    width:60%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border-width: none;
+    color:black;
+    cursor: pointer;
+    height:3rem;
+}
+
+.btn-opts .dis-none{
+    display: none !important;
+}
+
+.footer {
+    position: absolute;
+    bottom:0;
+    left:0;
+    height:35px;
+    width:100%;
+    background-color: deeppink;
+    text-align: center;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:740px) {
+    .banner {
+        font-size: 12px;
+        padding-top: 10px;
+        width:101.3%;
+    }
+    .topic {
+        font-size: 18px;
+    }
+    .box {
+        position: absolute;
+        top:30%;
+        width:100%;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        user-select:none;
+    }
+    
+    .box .ball {
+        display: inline-flex;
+        margin-left: 0;
+        height:52px;
+        width:52px;
+    }
+    
+    .box .ball #num1, .box .ball #num2, .box .ball #num3, .box .ball #num4,.box .ball #num5,.box .ball #num6 {
+        height:52px;
+        width:52px;
+        margin-top: 17px;
+        font-size: 16px;
+    }
+    
+    .btn-opts {
+        height: 12rem;
+        width:100%;
+        left:0;
+        top:40%;
+    }
+    
+    .btn-opts input:nth-child(-n+3){
+        width:30%;
+        height:3rem;
+        margin-left: 13%;
+        font-size: 15px;
+    }
+    
+    .btn-opts #confirm{
+        left:13%;
+        width:74%;
+        margin-top: 2rem;
+        font-size: 15px;
+    }
+    
+    .btn-opts .dis-none{
+        display: none !important;
+    }
+    
+    .footer {
+        position: absolute;
+        bottom:0;
+        left:0;
+        height:35px;
+        width:100%;
+        background-color: deeppink;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
